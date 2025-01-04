@@ -1,0 +1,17 @@
+{
+  "name": "common-types",
+  "main": "index.ts",
+  "types": "index.ts",
+  "lint-staged": {
+    "*.{json,md,mdx,html,css,scss}": "prettier --write",
+    "*.{tsx,jsx,ts,js}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "scripts": {
+    "lint-staged": "npx lint-staged",
+    "ncu-list": "ncu",
+    "ncu": "ncu -u"
+  }
+}

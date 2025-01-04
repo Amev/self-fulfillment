@@ -1,0 +1,46 @@
+{
+  "name": "auth",
+  "author": "Vezero",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "./",
+  "peerDependencies": {
+    "design-system": "*",
+    "eslint-config-base": "*",
+    "prettier-config-base": "*",
+    "tsconfig": "*"
+  },
+  "scripts": {
+    "start": "vite",
+    "build": "npm run build:app && npm run build:background",
+    "build:app": "tsc && vite build",
+    "build:background": "tsc && vite build --config vite.config.lib.mts",
+    "build:lib": "vite build",
+    "build:site": "vite build --config vite.config.site.js",
+    "lint-staged": "npx lint-staged",
+    "ncu-list": "ncu",
+    "ncu": "ncu -u"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "lint-staged": {
+    "*.{json,md,mdx,html,css,scss}": "prettier --write",
+    "*.{tsx,jsx,ts,js}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.289"
+  }
+}

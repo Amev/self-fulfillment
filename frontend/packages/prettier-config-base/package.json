@@ -1,0 +1,12 @@
+{
+  "name": "prettier-config-base",
+  "main": "index.js",
+  "version": "1.0.0",
+  "dependencies": {
+    "prettier": "latest"
+  },
+  "scripts": {
+    "ncu-list": "ncu",
+    "ncu": "ncu -u"
+  }
+}

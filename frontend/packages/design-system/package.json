@@ -1,0 +1,23 @@
+{
+  "name": "design-system",
+  "main": "index.tsx",
+  "types": "index.tsx",
+  "peerDependencies": {
+    "common-types": "*",
+    "eslint-config-base": "*",
+    "prettier-config-base": "*",
+    "tsconfig": "*"
+  },
+  "lint-staged": {
+    "*.{json,md,mdx,html,css,scss}": "prettier --write",
+    "*.{tsx,jsx,ts,js}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "scripts": {
+    "lint-staged": "npx lint-staged",
+    "ncu-list": "ncu",
+    "ncu": "ncu -u"
+  }
+}
