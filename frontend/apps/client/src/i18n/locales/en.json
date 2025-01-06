@@ -1,0 +1,200 @@
+{
+  "404": {
+    "title": "404",
+    "subtitle": "Sorry, the page you visited does not exist."
+  },
+  "home": {
+    "placeholder": "Home page"
+  },
+  "layout": {
+    "logo": {
+      "alt": "Logo"
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "log-out": "Log out",
+    "basic-informations": {
+      "avatar": {
+        "default": "U"
+      },
+      "firstname": {
+        "label": "Firstname",
+        "placeholder": "John"
+      },
+      "lastname": {
+        "label": "Lastname",
+        "placeholder": "Doe"
+      },
+      "birth-date": {
+        "label": "Birth date",
+        "placeholder": "01/01/1970"
+      },
+      "gender": {
+        "label": "Gender",
+        "placeholder": "Other",
+        "choices": {
+          "male": "Male",
+          "female": "Female",
+          "other": "Other"
+        }
+      },
+      "action": "Save",
+      "errors": {
+        "required": "this field is required"
+      }
+    },
+    "credentials-informations": {
+      "email": {
+        "label": "Email"
+      },
+      "password": {
+        "label": "Password"
+      },
+      "change-password": {
+        "request-change": {
+          "title": "Password update",
+          "current-password-placeholder": "Current password",
+          "new-password-placeholder": "New password",
+          "password-validation": {
+            "digit": "1 digit character",
+            "length": "8 characters minimum",
+            "lowercase": "1 lowercase letter",
+            "spaces": "no trailing space",
+            "symbol": "1 special character",
+            "uppercase": "1 uppercase letter"
+          },
+          "submit-button": "Submit",
+          "errors": {
+            "required": "this field is required",
+            "default": "An error occured",
+            "429": "Too many requests, please try later",
+            "403": "Current password is invalid"
+          }
+        },
+        "success": {
+          "title": "New password set"
+        }
+      },
+      "change-email": {
+        "password-placeholder": "Current password",
+        "request-change": {
+          "title": "Enter a new email",
+          "password-placeholder": "Current password",
+          "send-button": "Send a code",
+          "errors": {
+            "required": "this field is required",
+            "incorrect-email": "incorrect email",
+            "default": "An error occured",
+            "429": "Too many requests, please try later",
+            "403": "Invalid password"
+          }
+        },
+        "confirm-change": {
+          "title": "Verification code",
+          "content": "Enter the code we just sent you to your new email",
+          "code-validity": "The code is valid for 15 minutes",
+          "resend-button": "Resend a new code",
+          "errors": {
+            "default": "An error occured",
+            "429": "Too many requests, please try later",
+            "403": "Invalid code",
+            "409": "This phone is already associated to another account"
+          }
+        },
+        "success": {
+          "title": "New email set"
+        }
+      },
+      "mfa": {
+        "activated-message": "MFA activated",
+        "not-activated-message": "MFA not activated",
+        "activate-button": "setup now",
+        "confirm-change": {
+          "title": "Verification code",
+          "content": "Enter the code we just sent you to your phone",
+          "code-validity": "The code is valid for 15 minutes",
+          "resend-button": "Resend a new code",
+          "errors": {
+            "default": "An error occured",
+            "429": "Too many requests, please try later",
+            "403": "Invalid code"
+          }
+        },
+        "request-change": {
+          "title": "MFA activation",
+          "password-placeholder": "Current password",
+          "send-button": "Send a code",
+          "errors": {
+            "required": "this field is required",
+            "incorrect-email": "incorrect email",
+            "default": "An error occured",
+            "429": "Too many requests, please try later",
+            "403": "Invalid password"
+          }
+        },
+        "success": {
+          "title": "MFA activated"
+        }
+      }
+    },
+    "phone-informations": {
+      "phone": {
+        "label": "Phone"
+      },
+      "validation": {
+        "action": "Validate my phone number",
+        "success": "Validated"
+      },
+      "change-phone": {
+        "title": "Phone settings",
+        "resend": {
+          "action": "Resend a new code"
+        },
+        "errors": {
+          "required": "this field is required",
+          "default": "An error occured",
+          "429": "Too many requests, please try later"
+        }
+      },
+      "mfa": {
+        "label": "Multi Factor Authentication"
+      }
+    }
+  },
+  "organization": {
+    "content": "Organization Home page, to be filled !",
+    "create": "Create a new organization",
+    "settings": {
+      "title": "Settings",
+      "infos": {
+        "title": "Settings",
+        "name": "Name",
+        "submit": "Save",
+        "danger": {
+          "title": "Danger zone",
+          "action": "Delete organization"
+        }
+      },
+      "members": {
+        "title": "Members",
+        "count_one": "{{count}} member",
+        "count_other": "{{count}} members",
+        "you": "you",
+        "copy": "Copy",
+        "copy-success": "URL copied to clipboard!",
+        "invite": "Invite",
+        "invite-link": "Invite link",
+        "invite-email": "Invite by email",
+        "permissions": {
+          "admin": "Admin",
+          "user": "User"
+        },
+        "errors": {
+          "required": "this field is required",
+          "email": "isn’t a valid email"
+        }
+      }
+    }
+  }
+}

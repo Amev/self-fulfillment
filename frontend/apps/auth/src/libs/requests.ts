@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import type { BaseQueryFn } from '@reduxjs/toolkit/query';
 import axios, { AxiosError, AxiosRequestConfig } from 'axios';
 

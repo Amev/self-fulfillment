@@ -1,0 +1,117 @@
+version: "3.9"
+
+services:
+  backend:
+    container_name: backend_skeleton
+    platform: linux/amd64
+    build:
+      context: ./backend/source
+      dockerfile: Dockerfile
+    command: ["uvicorn", "--host", "0.0.0.0", "--workers", "3", "--reload", "app.asgi:application"]
+    entrypoint: ["sh", "./startup.sh"]
+    ports:
+    - 8000:8000
+    volumes:
+    - ./backend/source:/app
+    restart: always
+    environment:
+    - WORKERS_COUNT=${WORKERS_COUNT}
+    - ADMIN=${ADMIN}
+    - ADMIN_EMAIL=${ADMIN_EMAIL}
+    - ADMIN_PWD=${ADMIN_PWD}
+    - PROD=False
+    - DJANGO_SUPERUSER_PASSWORD=${DJANGO_SUPERUSER_PASSWORD}
+    - ROOT_API_URL=${ROOT_API_URL}
+    - PROJECT_NAME=${PROJECT_NAME}
+    - POSTGRES_NAME=${POSTGRES_NAME}
+    - POSTGRES_USER=${POSTGRES_USER}
+    - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    - POSTGRES_DB=${POSTGRES_DB}
+    - POSTGRES_HOST=${POSTGRES_HOST}
+    - POSTGRES_PORT=${POSTGRES_PORT}
+    - ALLOWED_HOSTS=${ALLOWED_HOSTS}
+    - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
+    - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+    - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+    - AUTH_SIGN_IN_URL=${AUTH_SIGN_IN_URL}
+    - APP_CLIENT_URL=${AUTH_DEFAULT_REDIRECT_URI}
+    - AWS_COGNITO_DOMAIN=${AWS_COGNITO_DOMAIN}
+    - AWS_COGNITO_CLIENT_ID=${AWS_COGNITO_CLIENT_ID}
+    - AWS_COGNITO_CLIENT_SECRET=${AWS_COGNITO_CLIENT_SECRET}
+    - AWS_COGNITO_USER_POOL=${AWS_COGNITO_USER_POOL}
+    - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+    - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+    - AWS_FOLDER_UPLOADS=${AWS_FOLDER_UPLOADS}
+    - AWS_STORAGE_BUCKET_NAME=${AWS_STORAGE_BUCKET_NAME}
+    - AWS_PUBLIC_BUCKET_NAME=${AWS_PUBLIC_BUCKET_NAME}
+    - AWS_REGION_NAME=${AWS_REGION_NAME}
+    networks:
+    - internal
+
+  db:
+    image: postgres
+    container_name: db_skeleton
+    restart: always
+    volumes:
+    - ./backend/data:/var/lib/postgresql/data
+    environment:
+    - POSTGRES_DB=${POSTGRES_DB}
+    - POSTGRES_USER=${POSTGRES_USER}
+    - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    networks:
+    - internal
+
+  frontend:
+    container_name: frontend_skeleton
+    build:
+      context: ./frontend/
+      dockerfile: ./Dockerfile
+    command: ["npm", "run", "start"]
+    volumes:
+    - ./frontend/apps:/home/node/project/apps/
+    - ./frontend/packages:/home/node/project/packages/
+    - /home/node/project/node_modules/
+    - /home/node/project/apps/admin/node_modules/
+    - /home/node/project/apps/client/node_modules/
+    - /home/node/project/apps/auth/node_modules/
+    - /home/node/project/apps/showcase/node_modules/
+    - /home/node/project/apps/storybook/node_modules/
+    - /home/node/project/apps/documentation/node_modules/
+    - /home/node/project/.turbo/
+    - /home/node/project/apps/admin/.turbo/
+    - /home/node/project/apps/client/.turbo/
+    - /home/node/project/apps/auth/.turbo/
+    - /home/node/project/apps/showcase/.turbo/
+    - /home/node/project/apps/storybook/.turbo/
+    - /home/node/project/apps/documentation/.turbo/
+    ports:
+    - 3000:3000
+    - 3001:3001
+    - 3002:3002
+    - 3003:3003
+    - 3004:3004
+    - 3005:3005
+    environment:
+    - VITE_ROOT_API_URL=${ROOT_API_URL}
+    - VITE_AUTH_DEFAULT_REDIRECT_URI=${AUTH_DEFAULT_REDIRECT_URI}
+    - VITE_ROOT_WS_URL=${ROOT_WS_URL}
+    - VITE_SIGN_IN_URL=${AUTH_SIGN_IN_URL}
+    - VITE_SHOWCASE_URL=${SHOWCASE_URI}
+    - VITE_AWS_COGNITO_DOMAIN=${AWS_COGNITO_DOMAIN}
+    - VITE_COGNITO_CLIENT_ID=${AWS_COGNITO_CLIENT_ID}
+    - VITE_GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+    - NEXT_PUBLIC_ROOT_API_URL=${ROOT_API_URL}
+    - NEXT_PUBLIC_SIGN_IN_URL=${AUTH_SIGN_IN_URL}
+    - AWS_LOGIN_PORTAL_URL=${AWS_LOGIN_PORTAL_URL}
+    - ADMIN_URI=${ADMIN_URI}
+    - DESIGN_URI=${DESIGN_URI}
+    - DOCUMENTATION_URI=${DOCUMENTATION_URI}
+    - GITHUB_REPOSITORY=${GITHUB_REPOSITORY}
+    - HUSKY=0
+
+networks:
+  internal:
+    driver: bridge
+
+volumes:
+  node_modules: {}

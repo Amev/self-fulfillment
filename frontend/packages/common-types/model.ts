@@ -179,8 +179,19 @@ export interface ActivityType {
 }
 
 export const SITES = {
-  Facebook: 'https://*.facebook.com/',
-  Youtube: 'https://*.youtube.com/',
+  Youtube: 'https://*.youtube.com/*',
 } as const;
 
-export type Site = keyof typeof SITES;
+export type SiteName = keyof typeof SITES;
+export type SiteURL = (typeof SITES)[SiteName];
+
+export interface Session {
+  site: SiteName;
+  start: number;
+  end: number;
+  id: string;
+}
+
+export type SessionStorage = Record<number, Session>;
+
+export const PING_INTERVAL = 30 * 1000;

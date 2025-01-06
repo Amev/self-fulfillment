@@ -1,0 +1,17 @@
+{
+  "404": {
+    "title": "404",
+    "subtitle": "Sorry, the page you visited does not exist."
+  },
+  "layout": {
+    "header": {
+      "links": {
+        "home": "Home",
+        "permissions": "Permissions"
+      }
+    }
+  },
+  "home": {
+    "title": "Today's wasted time"
+  }
+}

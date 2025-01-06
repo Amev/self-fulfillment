@@ -3,12 +3,147 @@
     "title": "404",
     "subtitle": "Sorry, the page you visited does not exist."
   },
-  "layout": {
-    "header": {
-      "links": {
-        "home": "Home",
-        "permissions": "Permissions"
+  "sign-in": {
+    "title": "Sign in",
+    "email": {
+      "placeholder": "email@example.com",
+      "label": "Your email"
+    },
+    "password": {
+      "placeholder": "************",
+      "label": "Your password"
+    },
+    "submit": "Sign in",
+    "divider": "or",
+    "providers": {
+      "google": {
+        "title": "Sign in with Google",
+        "errors": {
+          "access_denied": "You don't have access to this app."
+        }
       }
+    },
+    "sign-up": {
+      "desc": "Don’t have an account?",
+      "action": "Sign up"
+    },
+    "forgot-password": {
+      "action": "Forgot password?"
+    },
+    "errors": {
+      "required": "this field is required",
+      "types": {
+        "email": "isn’t a valid email"
+      },
+      "credentials": "Invalid credentials"
     }
+  },
+  "sign-up": {
+    "title": "Create an account",
+    "submit": "Sign up",
+    "email": {
+      "placeholder": "email@example.com",
+      "label": "Your email"
+    },
+    "password": {
+      "placeholder": "************",
+      "label": "Your password"
+    },
+    "errors": {
+      "required": "this field is required",
+      "types": {
+        "email": "isn’t a valid email"
+      },
+      "invalid-code": "This code is invalid"
+    },
+    "sign-in": {
+      "desc": "Already have an account?",
+      "action": "Sign in"
+    }
+  },
+  "mfa": {
+    "title": "Confirmation required",
+    "desc": "MFA authentication has been enabled on this account. Please enter the confirmation code sent to <bold>{{phone}}</bold>.",
+    "code": {
+      "label": "Code",
+      "placeholder": "123456"
+    },
+    "submit": "Confirm",
+    "errors": {
+      "code": "Invalid code"
+    },
+    "resend": {
+      "desc": "Didn’t receive the code?",
+      "action": "Resend a new code",
+      "confirmation": "We have just sent a new code"
+    }
+  },
+  "confirm-email": {
+    "title": "Confirm your email",
+    "desc": "A confirmation email has been sent to <bold>{{email}}</bold>.<br /><br />Please enter the confirmation code here to validate your registration.",
+    "code": {
+      "label": "Code",
+      "placeholder": "123456"
+    },
+    "password": {
+      "placeholder": "************",
+      "label": "Your password"
+    },
+    "submit": "Confirm",
+    "errors": {
+      "code": "Invalid code"
+    },
+    "resend": {
+      "desc": "Didn’t receive the confirmation email?",
+      "action": "Resend a new code",
+      "confirmation": "A new code has been sent"
+    }
+  },
+  "forgot-password": {
+    "email": {
+      "title": "Forgot password",
+      "desc": "Request an email with a temporary code to reset your password",
+      "placeholder": "email@example.com",
+      "label": "Your email",
+      "submit": "Send"
+    },
+    "code": {
+      "title": "New password",
+      "desc": "A temporary code has been sent by email to <bold>{{email}}</bold>",
+      "label": "Code",
+      "placeholder": "123456",
+      "submit": "Confirm"
+    },
+    "password": {
+      "placeholder": "************",
+      "label": "New password"
+    },
+    "sign-up": {
+      "desc": "Don’t have an account?",
+      "action": "Sign up"
+    },
+    "sign-in": {
+      "action": "Remember your password?"
+    },
+    "resend": {
+      "desc": "Didn’t receive the code by email?",
+      "action": "Resend a new code"
+    },
+    "errors": {
+      "required": "this field is required",
+      "types": {
+        "email": "isn’t a valid email"
+      },
+      "default": "Something went wrong, please retry",
+      "too-many-request": "Too many request, please retry later"
+    }
+  },
+  "password-validation": {
+    "digit": "1 digit character",
+    "length": "8 characters minimum",
+    "lowercase": "1 lowercase letter",
+    "spaces": "no trailing space",
+    "symbol": "1 special character",
+    "uppercase": "1 uppercase letter"
   }
 }

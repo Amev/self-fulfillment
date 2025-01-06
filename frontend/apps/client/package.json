@@ -1,0 +1,44 @@
+{
+  "name": "client",
+  "author": "Vezero",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "./",
+  "peerDependencies": {
+    "common-hooks": "*",
+    "common-types": "*",
+    "design-system": "*",
+    "eslint-config-base": "*",
+    "prettier-config-base": "*",
+    "tsconfig": "*"
+  },
+  "scripts": {
+    "start": "vite --host",
+    "build": "tsc && vite build",
+    "lint-staged": "npx lint-staged",
+    "ncu-list": "ncu",
+    "ncu": "ncu -u"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "lint-staged": {
+    "*.{json,md,mdx,html,css,scss}": "prettier --write",
+    "*.{tsx,jsx,ts,js}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@types/recordrtc": "^5.6.14"
+  }
+}

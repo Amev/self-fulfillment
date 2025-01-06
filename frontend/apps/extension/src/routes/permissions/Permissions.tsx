@@ -1,32 +1,32 @@
-import { Site, SITES } from 'common-types';
+import { SiteName, SITES } from 'common-types';
 import { Switch } from 'design-system';
 import { useCallback, useEffect, useState } from 'react';
 
 export default function Permissions() {
   const [activePermissions, setActivePermissions] = useState<
-    Record<Site, boolean>
+    Record<SiteName, boolean>
   >(
     Object.keys(SITES).reduce(
       (acc, name) => {
-        acc[name as Site] = false;
+        acc[name as SiteName] = false;
         return acc;
       },
-      {} as Record<Site, boolean>,
+      {} as Record<SiteName, boolean>,
     ),
   );
   const [loadingPermissions, setLoadingPermissions] = useState<
-    Record<Site, boolean>
+    Record<SiteName, boolean>
   >(
     Object.keys(SITES).reduce(
       (acc, name) => {
-        acc[name as Site] = false;
+        acc[name as SiteName] = false;
         return acc;
       },
-      {} as Record<Site, boolean>,
+      {} as Record<SiteName, boolean>,
     ),
   );
   const onChangePermission = useCallback(
-    (siteName: Site, siteURL: string) => (checked: boolean) => {
+    (siteName: SiteName, siteURL: string) => (checked: boolean) => {
       if (checked) {
         setLoadingPermissions((prevActivePermissions) => ({
           ...prevActivePermissions,
@@ -92,9 +92,9 @@ export default function Permissions() {
           >
             <span>{siteName}</span>
             <Switch
-              loading={loadingPermissions[siteName as Site]}
-              value={activePermissions[siteName as Site]}
-              onChange={onChangePermission(siteName as Site, siteURL)}
+              loading={loadingPermissions[siteName as SiteName]}
+              value={activePermissions[siteName as SiteName]}
+              onChange={onChangePermission(siteName as SiteName, siteURL)}
             />
           </div>
         ))}

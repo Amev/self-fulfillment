@@ -12,11 +12,7 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "npm run build:app && npm run build:background",
-    "build:app": "tsc && vite build",
-    "build:background": "tsc && vite build --config vite.config.lib.mts",
-    "build:lib": "vite build",
-    "build:site": "vite build --config vite.config.site.js",
+    "build": "tsc && vite build",
     "lint-staged": "npx lint-staged",
     "ncu-list": "ncu",
     "ncu": "ncu -u"
@@ -39,8 +35,5 @@
       "eslint --fix",
       "prettier --write"
     ]
-  },
-  "devDependencies": {
-    "@types/chrome": "^0.0.289"
   }
 }

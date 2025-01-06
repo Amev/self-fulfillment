@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Anti procrastination",
+  "description": "Control the time you spend on un-productive/non-productive sites",
+  "version": "1.0",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["alarms", "storage"],
+  "content_scripts": [
+    {
+      "js": ["content.es.js"],
+      "matches": ["https://*.youtube.com/*"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.es.js",
+    "type": "module"
+  }
+}
